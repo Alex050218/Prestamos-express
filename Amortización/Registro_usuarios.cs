@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Amortización
 {
@@ -46,16 +47,20 @@ namespace Amortización
             TextBox txtDatoNuevo = (TextBox)sender;
             string NombreDato = txtDatoNuevo.Name;
 
+            string Dato_nuevo = txtDatoNuevo.Text;
             switch (NombreDato)
             {
                 case "txtNombre":
-                    Datos_usuario["Nombre"] = txtDatoNuevo.Text;
+                    Datos_usuario["Nombre"] = Regex.Match(Dato_nuevo, @"^[A-Z][a-zA-Z\s]{2,40}$").Success
+                        ? Dato_nuevo : null;
                     break;
                 case "txtTelefono":
-                    Datos_usuario["Telefono"] = txtDatoNuevo.Text;
+                    Datos_usuario["Telefono"] = Regex.Match(Dato_nuevo, @"^[0-9]{10}$").Success
+                        ? Dato_nuevo: null;
                     break;
                 case "txtMonto":
-                    Datos_usuario["Monto"] = txtDatoNuevo.Text;
+                    Datos_usuario["Monto"] = Regex.Match(Dato_nuevo, @"[0-9]+").Success
+                        ? Dato_nuevo: null;
                     break;
             }
         }
