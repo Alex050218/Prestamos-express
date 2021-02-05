@@ -62,6 +62,7 @@ namespace Amortización
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(229, 20);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.Nuevo_dato);
             // 
             // label2
             // 
@@ -87,6 +88,7 @@ namespace Amortización
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(229, 20);
             this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.Nuevo_dato);
             // 
             // label4
             // 
@@ -103,6 +105,7 @@ namespace Amortización
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(229, 20);
             this.txtMonto.TabIndex = 8;
+            this.txtMonto.TextChanged += new System.EventHandler(this.Nuevo_dato);
             // 
             // vistaImg
             // 

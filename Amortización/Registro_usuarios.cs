@@ -45,5 +45,24 @@ namespace Amortización
 
             lblInteres.Text = $"Taza de interes: {Datos_usuario["Interes"]}%";
         }
+
+        private void Nuevo_dato(object sender, EventArgs e)
+        {
+            TextBox txtDatoNuevo = (TextBox)sender;
+            string NombreDato = txtDatoNuevo.Name;
+
+            switch (NombreDato)
+            {
+                case "txtNombre":
+                    Datos_usuario["Nombre"] = txtDatoNuevo.Text;
+                    break;
+                case "txtTelefono":
+                    Datos_usuario["Telefono"] = txtDatoNuevo.Text;
+                    break;
+                case "txtMonto":
+                    Datos_usuario["Monto"] = txtDatoNuevo.Text;
+                    break;
+            }
+        }
     }
 }
