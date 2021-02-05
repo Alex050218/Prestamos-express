@@ -1,7 +1,7 @@
 ﻿
 namespace Amortización
 {
-    partial class Form1
+    partial class Usuario
     {
         /// <summary>
         /// Required designer variable.

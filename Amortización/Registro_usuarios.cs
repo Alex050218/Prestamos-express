@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Amortización
 {
-    public partial class Form1 : Form
+    public partial class Usuario : Form
     {
-        public Form1()
+        public Usuario()
         {
             InitializeComponent();
         }
