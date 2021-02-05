@@ -46,9 +46,10 @@ namespace Amortización
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnContinuar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblInteres = new System.Windows.Forms.Label();
-            this.btnContinuar = new System.Windows.Forms.Button();
+            this.selecFoto = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -158,6 +159,7 @@ namespace Amortización
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "72 meses";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.Plazos);
             // 
             // radioButton5
             // 
@@ -169,6 +171,7 @@ namespace Amortización
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "48 meses";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.Plazos);
             // 
             // radioButton4
             // 
@@ -180,6 +183,7 @@ namespace Amortización
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "36 meses";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.Plazos);
             // 
             // radioButton3
             // 
@@ -191,6 +195,7 @@ namespace Amortización
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "12 meses";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.Plazos);
             // 
             // radioButton2
             // 
@@ -202,6 +207,7 @@ namespace Amortización
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "24 meses";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.Plazos);
             // 
             // radioButton1
             // 
@@ -213,6 +219,7 @@ namespace Amortización
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "6 meses";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.Plazos);
             // 
             // panel1
             // 
@@ -227,6 +234,16 @@ namespace Amortización
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(434, 314);
             this.panel1.TabIndex = 14;
+            // 
+            // btnContinuar
+            // 
+            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar.Location = new System.Drawing.Point(249, 238);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(173, 49);
+            this.btnContinuar.TabIndex = 15;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -250,15 +267,10 @@ namespace Amortización
             this.lblInteres.TabIndex = 14;
             this.lblInteres.Text = "Taza de interes: 0%";
             // 
-            // btnContinuar
+            // selecFoto
             // 
-            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinuar.Location = new System.Drawing.Point(249, 238);
-            this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(173, 49);
-            this.btnContinuar.TabIndex = 15;
-            this.btnContinuar.Text = "Continuar";
-            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.selecFoto.DefaultExt = "\"Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF\"";
+            this.selecFoto.FileName = "fotoUsuario";
             // 
             // Usuario
             // 
@@ -268,7 +280,7 @@ namespace Amortización
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "Usuario";
-            this.Text = "Form1";
+            this.Text = "Registro | Prestamos express";
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -301,6 +313,7 @@ namespace Amortización
         private System.Windows.Forms.Label lblInteres;
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.OpenFileDialog selecFoto;
     }
 }
 
