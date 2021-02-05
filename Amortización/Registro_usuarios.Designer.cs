@@ -284,8 +284,6 @@ namespace Amortización
             this.ClientSize = new System.Drawing.Size(434, 363);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(450, 402);
-            this.MinimumSize = new System.Drawing.Size(450, 402);
             this.Name = "Usuario";
             this.Text = "Registro | Prestamos express";
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).EndInit();
