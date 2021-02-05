@@ -29,39 +29,38 @@ namespace Amortización
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.vistaImg = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.agregarImg = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblInteres = new System.Windows.Forms.Label();
+            this.btnContinuar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(3, 33);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(229, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // label2
             // 
@@ -81,12 +80,12 @@ namespace Amortización
             this.label3.TabIndex = 7;
             this.label3.Text = "Telefono";
             // 
-            // textBox2
+            // txtTelefono
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(229, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtTelefono.Location = new System.Drawing.Point(3, 82);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(229, 20);
+            this.txtTelefono.TabIndex = 6;
             // 
             // label4
             // 
@@ -97,20 +96,21 @@ namespace Amortización
             this.label4.TabIndex = 9;
             this.label4.Text = "Monto a solicitar";
             // 
-            // textBox3
+            // txtMonto
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 132);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(229, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtMonto.Location = new System.Drawing.Point(3, 132);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(229, 20);
+            this.txtMonto.TabIndex = 8;
             // 
-            // pictureBox1
+            // vistaImg
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(249, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 194);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.vistaImg.Location = new System.Drawing.Point(249, 3);
+            this.vistaImg.Name = "vistaImg";
+            this.vistaImg.Size = new System.Drawing.Size(176, 194);
+            this.vistaImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.vistaImg.TabIndex = 10;
+            this.vistaImg.TabStop = false;
             // 
             // label1
             // 
@@ -124,14 +124,14 @@ namespace Amortización
             this.label1.Text = "Prestamos express";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // agregarImg
             // 
-            this.button1.Location = new System.Drawing.Point(6, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 24);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Agregar foto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.agregarImg.Location = new System.Drawing.Point(6, 173);
+            this.agregarImg.Name = "agregarImg";
+            this.agregarImg.Size = new System.Drawing.Size(237, 24);
+            this.agregarImg.TabIndex = 12;
+            this.agregarImg.Text = "Agregar foto";
+            this.agregarImg.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -141,81 +141,12 @@ namespace Amortización
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(38, 203);
+            this.groupBox1.Location = new System.Drawing.Point(21, 203);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(205, 94);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Plazos disponibles";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(434, 359);
-            this.panel1.TabIndex = 14;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(20, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(64, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "6 meses";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(20, 65);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "24 meses";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(20, 42);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(70, 17);
-            this.radioButton3.TabIndex = 16;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "12 meses";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(114, 19);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(70, 17);
-            this.radioButton4.TabIndex = 17;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "36 meses";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(114, 42);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(70, 17);
-            this.radioButton5.TabIndex = 18;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "48 meses";
-            this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton6
             // 
@@ -228,59 +159,117 @@ namespace Amortización
             this.radioButton6.Text = "72 meses";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // radioButton5
             // 
-            this.label5.Location = new System.Drawing.Point(279, 224);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Taza de interes:";
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(114, 42);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(70, 17);
+            this.radioButton5.TabIndex = 18;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "48 meses";
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // radioButton4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(279, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 16);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "label6";
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(114, 19);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(70, 17);
+            this.radioButton4.TabIndex = 17;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "36 meses";
+            this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // radioButton3
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(434, 49);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Continuar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(20, 42);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(70, 17);
+            this.radioButton3.TabIndex = 16;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "12 meses";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(20, 65);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(70, 17);
+            this.radioButton2.TabIndex = 15;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "24 meses";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(20, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(64, 17);
+            this.radioButton1.TabIndex = 14;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "6 meses";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnContinuar);
+            this.panel1.Controls.Add(this.agregarImg);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.vistaImg);
+            this.panel1.Controls.Add(this.lblInteres);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(434, 314);
+            this.panel1.TabIndex = 14;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtMonto);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtTelefono);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(6, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(237, 164);
             this.panel2.TabIndex = 16;
             // 
-            // Form1
+            // lblInteres
+            // 
+            this.lblInteres.AutoSize = true;
+            this.lblInteres.Location = new System.Drawing.Point(246, 222);
+            this.lblInteres.Name = "lblInteres";
+            this.lblInteres.Size = new System.Drawing.Size(100, 13);
+            this.lblInteres.TabIndex = 14;
+            this.lblInteres.Text = "Taza de interes: 0%";
+            // 
+            // btnContinuar
+            // 
+            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar.Location = new System.Drawing.Point(249, 238);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(173, 49);
+            this.btnContinuar.TabIndex = 15;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            // 
+            // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 408);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(434, 363);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Usuario";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -292,15 +281,15 @@ namespace Amortización
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.PictureBox vistaImg;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button agregarImg;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
@@ -309,9 +298,8 @@ namespace Amortización
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblInteres;
+        private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Panel panel2;
     }
 }
