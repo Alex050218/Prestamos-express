@@ -49,7 +49,7 @@ namespace Amortización
             this.btnContinuar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblInteres = new System.Windows.Forms.Label();
-            this.selecFoto = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -136,6 +136,7 @@ namespace Amortización
             this.agregarImg.TabIndex = 12;
             this.agregarImg.Text = "Agregar foto";
             this.agregarImg.UseVisualStyleBackColor = true;
+            this.agregarImg.Click += new System.EventHandler(this.agregarImg_Click);
             // 
             // groupBox1
             // 
@@ -270,10 +271,9 @@ namespace Amortización
             this.lblInteres.TabIndex = 14;
             this.lblInteres.Text = "Taza de interes: 0%";
             // 
-            // selecFoto
+            // openFileDialog1
             // 
-            this.selecFoto.DefaultExt = "\"Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF\"";
-            this.selecFoto.FileName = "fotoUsuario";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Usuario
             // 
@@ -316,7 +316,7 @@ namespace Amortización
         private System.Windows.Forms.Label lblInteres;
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.OpenFileDialog selecFoto;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

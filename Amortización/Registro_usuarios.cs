@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Amortización
@@ -16,11 +17,11 @@ namespace Amortización
         };
 
         private readonly Dictionary<string, string> Intereses = new Dictionary<string, string>() {
-            {"6", "20"}, 
-            {"12", "25"}, 
-            {"24", "30"}, 
-            {"36", "35"}, 
-            {"48", "40"}, 
+            {"6", "20"},
+            {"12", "25"},
+            {"24", "30"},
+            {"36", "35"},
+            {"48", "40"},
             {"72", "50"}
         };
 
@@ -56,6 +57,23 @@ namespace Amortización
                 case "txtMonto":
                     Datos_usuario["Monto"] = txtDatoNuevo.Text;
                     break;
+            }
+        }
+
+        private void agregarImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog DialogoFoto = new OpenFileDialog
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"
+            };
+
+            if (DialogoFoto.ShowDialog() == DialogResult.OK)
+            {
+                string DirFoto = DialogoFoto.FileName;
+                Datos_usuario["Directorio"] = DirFoto;
+
+                Image FotoUsuario = Image.FromFile(DirFoto);
+                vistaImg.Image = FotoUsuario;
             }
         }
     }
