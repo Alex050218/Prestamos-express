@@ -29,6 +29,7 @@ namespace Amortización
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuario));
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -109,6 +110,7 @@ namespace Amortización
             // 
             // vistaImg
             // 
+            this.vistaImg.Image = ((System.Drawing.Image)(resources.GetObject("vistaImg.Image")));
             this.vistaImg.Location = new System.Drawing.Point(249, 3);
             this.vistaImg.Name = "vistaImg";
             this.vistaImg.Size = new System.Drawing.Size(176, 194);
@@ -282,6 +284,8 @@ namespace Amortización
             this.ClientSize = new System.Drawing.Size(434, 363);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(450, 402);
+            this.MinimumSize = new System.Drawing.Size(450, 402);
             this.Name = "Usuario";
             this.Text = "Registro | Prestamos express";
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).EndInit();
