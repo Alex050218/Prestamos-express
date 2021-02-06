@@ -29,6 +29,11 @@ namespace Amortización
         public Usuario()
         {
             InitializeComponent();
+            grpRegistro.BringToFront();
+            grpRegistro.Visible = true;
+
+            grpTabla.SendToBack();
+            grpTabla.Visible = false;
         }
 
         private void Plazos(object sender, EventArgs e)
@@ -81,5 +86,27 @@ namespace Amortización
                 vistaImg.Image = FotoUsuario;
             }
         }
-    }
+
+        private void CambiarVentana(object sender, EventArgs e)
+        {
+            Button BtnClickeado = (Button)sender;
+            string NombreBtn = BtnClickeado.Name;
+
+            switch (NombreBtn)
+            {
+                case "btnRegresar":
+                    grpRegistro.BringToFront();
+                    grpRegistro.Visible = true;
+                    grpTabla.Visible = false;
+                    grpTabla.SendToBack();
+                    break;
+                case "btnContinuar":
+                    grpRegistro.SendToBack();
+                    grpRegistro.Visible = false;
+                    grpTabla.Visible = true;
+                    grpTabla.BringToFront();
+                    break;
+            }
+        }
+   }
 }
