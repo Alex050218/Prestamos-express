@@ -66,7 +66,7 @@ namespace Amortización
                         ? Dato_nuevo: "";
                     break;
                 case "txtMonto":
-                    Datos_usuario["Monto"] = Regex.Match(Dato_nuevo, @"[0-9]+").Success
+                    Datos_usuario["Monto"] = Regex.Match(Dato_nuevo, @"[0-9]{4,}").Success
                         ? Dato_nuevo: "";
                     break;
             }
