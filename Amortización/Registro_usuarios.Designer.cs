@@ -51,12 +51,19 @@ namespace Amortización
             this.lblInteres = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumPeriodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumIntereses = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumAbono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpTabla = new System.Windows.Forms.Panel();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblMonto = new System.Windows.Forms.Label();
-            this.lblPlazo = new System.Windows.Forms.Label();
-            this.lblnteres = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.lblnteres = new System.Windows.Forms.Label();
+            this.lblPlazo = new System.Windows.Forms.Label();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblTCuota = new System.Windows.Forms.Label();
+            this.lblTAbono = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpRegistro.SuspendLayout();
@@ -169,7 +176,6 @@ namespace Amortización
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(70, 17);
             this.radioButton6.TabIndex = 19;
-            this.radioButton6.TabStop = true;
             this.radioButton6.Text = "72 meses";
             this.radioButton6.UseVisualStyleBackColor = true;
             this.radioButton6.CheckedChanged += new System.EventHandler(this.Plazos);
@@ -181,7 +187,6 @@ namespace Amortización
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(70, 17);
             this.radioButton5.TabIndex = 18;
-            this.radioButton5.TabStop = true;
             this.radioButton5.Text = "48 meses";
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.CheckedChanged += new System.EventHandler(this.Plazos);
@@ -193,7 +198,6 @@ namespace Amortización
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(70, 17);
             this.radioButton4.TabIndex = 17;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "36 meses";
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.Plazos);
@@ -205,7 +209,6 @@ namespace Amortización
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(70, 17);
             this.radioButton3.TabIndex = 16;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "12 meses";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.Plazos);
@@ -217,7 +220,6 @@ namespace Amortización
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(70, 17);
             this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "24 meses";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.Plazos);
@@ -229,7 +231,6 @@ namespace Amortización
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(64, 17);
             this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "6 meses";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.Plazos);
@@ -279,87 +280,147 @@ namespace Amortización
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 62);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumPeriodo,
+            this.ColumCuota,
+            this.ColumIntereses,
+            this.ColumAbono,
+            this.ColumSaldo});
+            this.dataGridView1.Location = new System.Drawing.Point(28, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(422, 161);
             this.dataGridView1.TabIndex = 15;
             // 
+            // ColumPeriodo
+            // 
+            this.ColumPeriodo.HeaderText = "Periodo";
+            this.ColumPeriodo.Name = "ColumPeriodo";
+            this.ColumPeriodo.ReadOnly = true;
+            // 
+            // ColumCuota
+            // 
+            this.ColumCuota.HeaderText = "Cuota";
+            this.ColumCuota.Name = "ColumCuota";
+            this.ColumCuota.ReadOnly = true;
+            // 
+            // ColumIntereses
+            // 
+            this.ColumIntereses.HeaderText = "Intereses";
+            this.ColumIntereses.Name = "ColumIntereses";
+            this.ColumIntereses.ReadOnly = true;
+            // 
+            // ColumAbono
+            // 
+            this.ColumAbono.HeaderText = "Abono Capital";
+            this.ColumAbono.Name = "ColumAbono";
+            this.ColumAbono.ReadOnly = true;
+            // 
+            // ColumSaldo
+            // 
+            this.ColumSaldo.HeaderText = "Saldo";
+            this.ColumSaldo.Name = "ColumSaldo";
+            this.ColumSaldo.ReadOnly = true;
+            // 
             // grpTabla
             // 
+            this.grpTabla.Controls.Add(this.lblTAbono);
+            this.grpTabla.Controls.Add(this.lblTCuota);
             this.grpTabla.Controls.Add(this.btnRegresar);
             this.grpTabla.Controls.Add(this.lblnteres);
             this.grpTabla.Controls.Add(this.lblPlazo);
             this.grpTabla.Controls.Add(this.lblMonto);
             this.grpTabla.Controls.Add(this.lblNombre);
             this.grpTabla.Controls.Add(this.dataGridView1);
-            this.grpTabla.Location = new System.Drawing.Point(-1, 64);
+            this.grpTabla.Location = new System.Drawing.Point(-1, 52);
             this.grpTabla.Name = "grpTabla";
-            this.grpTabla.Size = new System.Drawing.Size(489, 277);
+            this.grpTabla.Size = new System.Drawing.Size(489, 312);
             this.grpTabla.TabIndex = 16;
             // 
-            // lblNombre
+            // btnRegresar
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(86, 12);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(60, 16);
-            this.lblNombre.TabIndex = 16;
-            this.lblNombre.Text = "Nombre:";
-            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblMonto
-            // 
-            this.lblMonto.AutoSize = true;
-            this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonto.Location = new System.Drawing.Point(86, 43);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(48, 16);
-            this.lblMonto.TabIndex = 17;
-            this.lblMonto.Text = "Monto:";
-            this.lblMonto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPlazo
-            // 
-            this.lblPlazo.AutoSize = true;
-            this.lblPlazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlazo.Location = new System.Drawing.Point(326, 43);
-            this.lblPlazo.Name = "lblPlazo";
-            this.lblPlazo.Size = new System.Drawing.Size(45, 16);
-            this.lblPlazo.TabIndex = 18;
-            this.lblPlazo.Text = "Plazo:";
-            this.lblPlazo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Location = new System.Drawing.Point(303, 243);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(144, 49);
+            this.btnRegresar.TabIndex = 20;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.CambiarVentana);
             // 
             // lblnteres
             // 
             this.lblnteres.AutoSize = true;
             this.lblnteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnteres.Location = new System.Drawing.Point(326, 12);
+            this.lblnteres.Location = new System.Drawing.Point(300, 12);
             this.lblnteres.Name = "lblnteres";
             this.lblnteres.Size = new System.Drawing.Size(51, 16);
             this.lblnteres.TabIndex = 19;
             this.lblnteres.Text = "Interes:";
             this.lblnteres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnRegresar
+            // lblPlazo
             // 
-            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(130, 229);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(217, 36);
-            this.btnRegresar.TabIndex = 20;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.CambiarVentana);
+            this.lblPlazo.AutoSize = true;
+            this.lblPlazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlazo.Location = new System.Drawing.Point(300, 44);
+            this.lblPlazo.Name = "lblPlazo";
+            this.lblPlazo.Size = new System.Drawing.Size(45, 16);
+            this.lblPlazo.TabIndex = 18;
+            this.lblPlazo.Text = "Plazo:";
+            this.lblPlazo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMonto
+            // 
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonto.Location = new System.Drawing.Point(38, 43);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(48, 16);
+            this.lblMonto.TabIndex = 17;
+            this.lblMonto.Text = "Monto:";
+            this.lblMonto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(38, 12);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(60, 16);
+            this.lblNombre.TabIndex = 16;
+            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTCuota
+            // 
+            this.lblTCuota.AutoSize = true;
+            this.lblTCuota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTCuota.Location = new System.Drawing.Point(37, 249);
+            this.lblTCuota.Name = "lblTCuota";
+            this.lblTCuota.Size = new System.Drawing.Size(90, 15);
+            this.lblTCuota.TabIndex = 21;
+            this.lblTCuota.Text = "Total Intereses:";
+            // 
+            // lblTAbono
+            // 
+            this.lblTAbono.AutoSize = true;
+            this.lblTAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTAbono.Location = new System.Drawing.Point(37, 272);
+            this.lblTAbono.Name = "lblTAbono";
+            this.lblTAbono.Size = new System.Drawing.Size(70, 15);
+            this.lblTAbono.TabIndex = 22;
+            this.lblTAbono.Text = "Total cuota:";
             // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 376);
-            this.Controls.Add(this.grpRegistro);
             this.Controls.Add(this.grpTabla);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpRegistro);
+            this.MaximumSize = new System.Drawing.Size(499, 415);
+            this.MinimumSize = new System.Drawing.Size(499, 415);
             this.Name = "Usuario";
             this.Text = "Registro | Prestamos express";
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).EndInit();
@@ -402,6 +463,13 @@ namespace Amortización
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumPeriodo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCuota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumIntereses;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumAbono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumSaldo;
+        private System.Windows.Forms.Label lblTAbono;
+        private System.Windows.Forms.Label lblTCuota;
     }
 }
 

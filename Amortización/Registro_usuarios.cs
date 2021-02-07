@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace Amortización
 {
     public partial class Usuario : Form
     {
         private readonly Dictionary<string, string> Datos_usuario = new Dictionary<string, string>() {
-            {"Nombre", null},
-            {"Telefono",null},
-            {"Monto", null},
-            {"Plazo", null},
-            {"Interes", null},
-            {"Directorio" , null}
+            {"Nombre", ""},
+            {"Telefono", ""},
+            {"Monto", ""},
+            {"Plazo", ""},
+            {"Interes", ""},
+            {"Directorio" , ""}
         };
 
         private readonly Dictionary<string, string> Intereses = new Dictionary<string, string>() {
@@ -26,14 +27,15 @@ namespace Amortización
             {"72", "50"}
         };
 
+        private readonly Image DefaultImage = null;
+
         public Usuario()
         {
             InitializeComponent();
             grpRegistro.BringToFront();
             grpRegistro.Visible = true;
-
             grpTabla.SendToBack();
-            grpTabla.Visible = false;
+            DefaultImage = vistaImg.Image;
         }
 
         private void Plazos(object sender, EventArgs e)
@@ -42,9 +44,9 @@ namespace Amortización
             string Plazo_selec = btnPlazos.Text.Split(' ')[0];
 
             Datos_usuario["Plazo"] = Plazo_selec;
-            Datos_usuario["Interes"] = Intereses[Plazo_selec];
+            Datos_usuario["Interes"] = $"0.{Intereses[Plazo_selec]}";
 
-            lblInteres.Text = $"Taza de interes: {Datos_usuario["Interes"]}%";
+            lblInteres.Text = $"Taza de interes: {Intereses[Plazo_selec]}%";
         }
 
         private void Nuevo_dato(object sender, EventArgs e)
@@ -57,15 +59,15 @@ namespace Amortización
             {
                 case "txtNombre":
                     Datos_usuario["Nombre"] = Regex.Match(Dato_nuevo, @"^[A-Z][a-zA-Z\s]{2,40}$").Success
-                        ? Dato_nuevo : null;
+                        ? Dato_nuevo : "";
                     break;
                 case "txtTelefono":
                     Datos_usuario["Telefono"] = Regex.Match(Dato_nuevo, @"^[0-9]{10}$").Success
-                        ? Dato_nuevo: null;
+                        ? Dato_nuevo: "";
                     break;
                 case "txtMonto":
                     Datos_usuario["Monto"] = Regex.Match(Dato_nuevo, @"[0-9]+").Success
-                        ? Dato_nuevo: null;
+                        ? Dato_nuevo: "";
                     break;
             }
         }
@@ -92,6 +94,7 @@ namespace Amortización
             Button BtnClickeado = (Button)sender;
             string NombreBtn = BtnClickeado.Name;
 
+            bool TodoLleno = Datos_usuario.Values.Contains("");
             switch (NombreBtn)
             {
                 case "btnRegresar":
@@ -99,14 +102,42 @@ namespace Amortización
                     grpRegistro.Visible = true;
                     grpTabla.Visible = false;
                     grpTabla.SendToBack();
+                    LimpiarRegistro();
                     break;
                 case "btnContinuar":
-                    grpRegistro.SendToBack();
-                    grpRegistro.Visible = false;
-                    grpTabla.Visible = true;
-                    grpTabla.BringToFront();
+                    if (!TodoLleno)
+                    {
+                        grpRegistro.SendToBack();
+                        grpRegistro.Visible = false;
+                        grpTabla.Visible = true;
+                        grpTabla.BringToFront();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Campos vacios o invalidos. Trate de introducir valores nuevos",
+                            "Valor invalido", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                       );
+                    }
                     break;
             }
+        }
+
+        private void LimpiarRegistro()
+        {
+            txtMonto.Clear();
+            txtNombre.Clear();
+            txtTelefono.Clear();
+            lblInteres.Text = "Taza de interes: 0%";
+            vistaImg.Image = DefaultImage;
+
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
+            radioButton6.Checked = false;
         }
    }
 }
