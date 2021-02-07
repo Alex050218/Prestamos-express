@@ -34,7 +34,6 @@ namespace Amortización
             InitializeComponent();
             grpRegistro.BringToFront();
             grpRegistro.Visible = true;
-            grpTabla.SendToBack();
             DefaultImage = vistaImg.Image;
         }
 
@@ -102,7 +101,12 @@ namespace Amortización
                     grpRegistro.Visible = true;
                     grpTabla.Visible = false;
                     grpTabla.SendToBack();
+
+                    Cuota_total = 0;
+                    Interes_total = 0;
                     LimpiarRegistro();
+                    lblInteres.Text = "Interes: 0%";
+                    Datos.Clear();
                     break;
                 case "btnContinuar":
                     if (!TodoLleno)
@@ -111,6 +115,7 @@ namespace Amortización
                         grpRegistro.Visible = false;
                         grpTabla.Visible = true;
                         grpTabla.BringToFront();
+                        Mostrar_datos();
                     }
                     else
                     {

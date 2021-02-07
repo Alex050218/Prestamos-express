@@ -50,24 +50,19 @@ namespace Amortización
             this.btnContinuar = new System.Windows.Forms.Button();
             this.lblInteres = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumPeriodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumCuota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumIntereses = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumAbono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblAmortizacion = new System.Windows.Forms.DataGridView();
             this.grpTabla = new System.Windows.Forms.Panel();
+            this.lblTACuota = new System.Windows.Forms.Label();
+            this.lblTInteres = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.lblnteres = new System.Windows.Forms.Label();
+            this.lblnteresFinal = new System.Windows.Forms.Label();
             this.lblPlazo = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblTCuota = new System.Windows.Forms.Label();
-            this.lblTAbono = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpRegistro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAmortizacion)).BeginInit();
             this.grpTabla.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -277,64 +272,48 @@ namespace Amortización
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dataGridView1
+            // tblAmortizacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumPeriodo,
-            this.ColumCuota,
-            this.ColumIntereses,
-            this.ColumAbono,
-            this.ColumSaldo});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(422, 161);
-            this.dataGridView1.TabIndex = 15;
-            // 
-            // ColumPeriodo
-            // 
-            this.ColumPeriodo.HeaderText = "Periodo";
-            this.ColumPeriodo.Name = "ColumPeriodo";
-            this.ColumPeriodo.ReadOnly = true;
-            // 
-            // ColumCuota
-            // 
-            this.ColumCuota.HeaderText = "Cuota";
-            this.ColumCuota.Name = "ColumCuota";
-            this.ColumCuota.ReadOnly = true;
-            // 
-            // ColumIntereses
-            // 
-            this.ColumIntereses.HeaderText = "Intereses";
-            this.ColumIntereses.Name = "ColumIntereses";
-            this.ColumIntereses.ReadOnly = true;
-            // 
-            // ColumAbono
-            // 
-            this.ColumAbono.HeaderText = "Abono Capital";
-            this.ColumAbono.Name = "ColumAbono";
-            this.ColumAbono.ReadOnly = true;
-            // 
-            // ColumSaldo
-            // 
-            this.ColumSaldo.HeaderText = "Saldo";
-            this.ColumSaldo.Name = "ColumSaldo";
-            this.ColumSaldo.ReadOnly = true;
+            this.tblAmortizacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblAmortizacion.Location = new System.Drawing.Point(28, 73);
+            this.tblAmortizacion.Name = "tblAmortizacion";
+            this.tblAmortizacion.Size = new System.Drawing.Size(422, 161);
+            this.tblAmortizacion.TabIndex = 15;
             // 
             // grpTabla
             // 
-            this.grpTabla.Controls.Add(this.lblTAbono);
-            this.grpTabla.Controls.Add(this.lblTCuota);
+            this.grpTabla.Controls.Add(this.lblTACuota);
+            this.grpTabla.Controls.Add(this.lblTInteres);
             this.grpTabla.Controls.Add(this.btnRegresar);
-            this.grpTabla.Controls.Add(this.lblnteres);
+            this.grpTabla.Controls.Add(this.lblnteresFinal);
             this.grpTabla.Controls.Add(this.lblPlazo);
             this.grpTabla.Controls.Add(this.lblMonto);
             this.grpTabla.Controls.Add(this.lblNombre);
-            this.grpTabla.Controls.Add(this.dataGridView1);
+            this.grpTabla.Controls.Add(this.tblAmortizacion);
             this.grpTabla.Location = new System.Drawing.Point(-1, 52);
             this.grpTabla.Name = "grpTabla";
             this.grpTabla.Size = new System.Drawing.Size(489, 312);
             this.grpTabla.TabIndex = 16;
+            // 
+            // lblTACuota
+            // 
+            this.lblTACuota.AutoSize = true;
+            this.lblTACuota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTACuota.Location = new System.Drawing.Point(37, 272);
+            this.lblTACuota.Name = "lblTACuota";
+            this.lblTACuota.Size = new System.Drawing.Size(70, 15);
+            this.lblTACuota.TabIndex = 22;
+            this.lblTACuota.Text = "Total cuota:";
+            // 
+            // lblTInteres
+            // 
+            this.lblTInteres.AutoSize = true;
+            this.lblTInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTInteres.Location = new System.Drawing.Point(37, 249);
+            this.lblTInteres.Name = "lblTInteres";
+            this.lblTInteres.Size = new System.Drawing.Size(90, 15);
+            this.lblTInteres.TabIndex = 21;
+            this.lblTInteres.Text = "Total Intereses:";
             // 
             // btnRegresar
             // 
@@ -347,16 +326,16 @@ namespace Amortización
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.CambiarVentana);
             // 
-            // lblnteres
+            // lblnteresFinal
             // 
-            this.lblnteres.AutoSize = true;
-            this.lblnteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnteres.Location = new System.Drawing.Point(300, 12);
-            this.lblnteres.Name = "lblnteres";
-            this.lblnteres.Size = new System.Drawing.Size(51, 16);
-            this.lblnteres.TabIndex = 19;
-            this.lblnteres.Text = "Interes:";
-            this.lblnteres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblnteresFinal.AutoSize = true;
+            this.lblnteresFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnteresFinal.Location = new System.Drawing.Point(300, 12);
+            this.lblnteresFinal.Name = "lblnteresFinal";
+            this.lblnteresFinal.Size = new System.Drawing.Size(51, 16);
+            this.lblnteresFinal.TabIndex = 19;
+            this.lblnteresFinal.Text = "Interes:";
+            this.lblnteresFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlazo
             // 
@@ -391,34 +370,14 @@ namespace Amortización
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTCuota
-            // 
-            this.lblTCuota.AutoSize = true;
-            this.lblTCuota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTCuota.Location = new System.Drawing.Point(37, 249);
-            this.lblTCuota.Name = "lblTCuota";
-            this.lblTCuota.Size = new System.Drawing.Size(90, 15);
-            this.lblTCuota.TabIndex = 21;
-            this.lblTCuota.Text = "Total Intereses:";
-            // 
-            // lblTAbono
-            // 
-            this.lblTAbono.AutoSize = true;
-            this.lblTAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTAbono.Location = new System.Drawing.Point(37, 272);
-            this.lblTAbono.Name = "lblTAbono";
-            this.lblTAbono.Size = new System.Drawing.Size(70, 15);
-            this.lblTAbono.TabIndex = 22;
-            this.lblTAbono.Text = "Total cuota:";
-            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 376);
+            this.Controls.Add(this.grpRegistro);
             this.Controls.Add(this.grpTabla);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.grpRegistro);
             this.MaximumSize = new System.Drawing.Size(499, 415);
             this.MinimumSize = new System.Drawing.Size(499, 415);
             this.Name = "Usuario";
@@ -428,7 +387,7 @@ namespace Amortización
             this.groupBox1.PerformLayout();
             this.grpRegistro.ResumeLayout(false);
             this.grpRegistro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAmortizacion)).EndInit();
             this.grpTabla.ResumeLayout(false);
             this.grpTabla.PerformLayout();
             this.ResumeLayout(false);
@@ -456,20 +415,15 @@ namespace Amortización
         private System.Windows.Forms.Label lblInteres;
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tblAmortizacion;
         private System.Windows.Forms.Panel grpTabla;
-        private System.Windows.Forms.Label lblnteres;
+        private System.Windows.Forms.Label lblnteresFinal;
         private System.Windows.Forms.Label lblPlazo;
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumPeriodo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumCuota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumIntereses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumAbono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumSaldo;
-        private System.Windows.Forms.Label lblTAbono;
-        private System.Windows.Forms.Label lblTCuota;
+        private System.Windows.Forms.Label lblTACuota;
+        private System.Windows.Forms.Label lblTInteres;
     }
 }
 
