@@ -59,6 +59,7 @@ namespace Amortización
             this.lblPlazo = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnGuardarD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpRegistro.SuspendLayout();
@@ -282,6 +283,7 @@ namespace Amortización
             // 
             // grpTabla
             // 
+            this.grpTabla.Controls.Add(this.btnGuardarD);
             this.grpTabla.Controls.Add(this.lblTACuota);
             this.grpTabla.Controls.Add(this.lblTInteres);
             this.grpTabla.Controls.Add(this.btnRegresar);
@@ -317,10 +319,10 @@ namespace Amortización
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.Location = new System.Drawing.Point(303, 243);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(144, 49);
+            this.btnRegresar.Size = new System.Drawing.Size(68, 49);
             this.btnRegresar.TabIndex = 20;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -370,14 +372,23 @@ namespace Amortización
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnGuardarD
+            // 
+            this.btnGuardarD.Location = new System.Drawing.Point(377, 243);
+            this.btnGuardarD.Name = "btnGuardarD";
+            this.btnGuardarD.Size = new System.Drawing.Size(70, 49);
+            this.btnGuardarD.TabIndex = 23;
+            this.btnGuardarD.Text = "Guardar datos";
+            this.btnGuardarD.UseVisualStyleBackColor = true;
+            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 376);
-            this.Controls.Add(this.grpRegistro);
             this.Controls.Add(this.grpTabla);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpRegistro);
             this.MaximumSize = new System.Drawing.Size(499, 415);
             this.MinimumSize = new System.Drawing.Size(499, 415);
             this.Name = "Usuario";
@@ -424,6 +435,7 @@ namespace Amortización
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label lblTACuota;
         private System.Windows.Forms.Label lblTInteres;
+        private System.Windows.Forms.Button btnGuardarD;
     }
 }
 
