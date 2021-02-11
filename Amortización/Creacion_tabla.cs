@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 
 namespace Amortización
 {
@@ -8,10 +7,9 @@ namespace Amortización
         private double Monto_req = 0;
         private double Plazo_pr = 0;
         private double Interes_pr = 0;
+
         private double Cuota_total = 0;
         private double Interes_total = 0;
-
-        readonly DataTable Datos = new DataTable();
 
         private void ParsearDatos()
         {
@@ -22,20 +20,6 @@ namespace Amortización
 
         private void Calcular()
         {
-            if (Datos.Columns.Count == 0)
-            {
-                Datos.Columns.AddRange(
-                    new DataColumn[5]
-                    {
-                        new DataColumn("Periodo", typeof(int)),
-                        new DataColumn("Cuota", typeof(double)),
-                        new DataColumn("Intereses", typeof(double)),
-                        new DataColumn("Abono Capital", typeof(double)),
-                        new DataColumn("Saldo", typeof(double))
-                    }
-                );
-            }
-
             ParsearDatos();
             double
                 Exp = Math.Pow(1 + Interes_pr, Plazo_pr),
@@ -76,8 +60,6 @@ namespace Amortización
             lblPlazo.Text = $"Plazo: {Datos_usuario["Plazo"]} meses";
             lblMonto.Text = $"Monto: {Datos_usuario["Monto"]}$";
             lblnteresFinal.Text = $"Interes: {Intereses[Plazo_usuario]}%";
-
-            tblAmortizacion.DataSource = Datos;
 
             lblTACuota.Text = $"Cuota total: {Math.Round(Cuota_total, 2)}$";
             lblTInteres.Text = $"Interes total: {Math.Round(Interes_total, 2)}$";

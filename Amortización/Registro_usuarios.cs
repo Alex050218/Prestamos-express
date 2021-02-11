@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -27,6 +28,8 @@ namespace Amortización
             {"72", "50"}
         };
 
+        readonly DataTable Datos = new DataTable();
+
         private readonly Image DefaultImage = null;
 
         public Usuario()
@@ -34,7 +37,21 @@ namespace Amortización
             InitializeComponent();
             grpRegistro.BringToFront();
             grpRegistro.Visible = true;
+
             DefaultImage = vistaImg.Image;
+
+            Datos.Columns.AddRange(
+                new DataColumn[5]
+                {
+                    new DataColumn("Periodo", typeof(int)),
+                    new DataColumn("Cuota", typeof(double)),
+                    new DataColumn("Intereses", typeof(double)),
+                    new DataColumn("Abono Capital", typeof(double)),
+                    new DataColumn("Saldo", typeof(double))
+                }
+            );
+
+            tblAmortizacion.DataSource = Datos;
         }
 
         private void Plazos(object sender, EventArgs e)
