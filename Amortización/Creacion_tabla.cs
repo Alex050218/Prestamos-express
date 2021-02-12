@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 namespace Amortización
 {
@@ -63,6 +66,31 @@ namespace Amortización
 
             lblTACuota.Text = $"Cuota total: {Math.Round(Cuota_total, 2)}$";
             lblTInteres.Text = $"Interes total: {Math.Round(Interes_total, 2)}$";
+        }
+
+        private void Escribir_txt(Object sender, EventArgs e)
+        {
+            FolderBrowserDialog NuevoFolder = new FolderBrowserDialog();
+            DateTime FechaActual = DateTime.Now;
+
+            if(NuevoFolder.ShowDialog() == DialogResult.OK)
+            {
+                string Directorio = NuevoFolder.SelectedPath;
+                string StrFecha = FechaActual.ToString("yyyy-MM-dd");
+                string DirArchivo = Path.Combine(Directorio, $"{Datos_usuario["Nombre"]} {StrFecha}.txt");
+
+                using (StreamWriter TxtNuevo = new StreamWriter(DirArchivo, false))
+                {
+                    foreach(DataRow ColumnaTabla in Datos.Rows)
+                    {
+                        TxtNuevo.WriteLine(
+                            $"Periodo: {ColumnaTabla["Periodo"]}, Cuota: {ColumnaTabla["Cuota"]}, Intereses: {ColumnaTabla["Intereses"]}, Abono capital: {ColumnaTabla["Abono Capital"]}, Saldo: {ColumnaTabla["Saldo"]}"
+                        );
+                    }
+
+                    TxtNuevo.WriteLine($"\nIntereses total: {Interes_total}, Cuota total: {Cuota_total}");
+                }
+            }
         }
     }
 }

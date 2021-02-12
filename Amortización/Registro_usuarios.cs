@@ -161,5 +161,5 @@ namespace Amortización
             radioButton5.Checked = false;
             radioButton6.Checked = false;
         }
-   }
+    }
 }

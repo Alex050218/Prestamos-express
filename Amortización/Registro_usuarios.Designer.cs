@@ -52,6 +52,7 @@ namespace Amortización
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tblAmortizacion = new System.Windows.Forms.DataGridView();
             this.grpTabla = new System.Windows.Forms.Panel();
+            this.btnGuardarD = new System.Windows.Forms.Button();
             this.lblTACuota = new System.Windows.Forms.Label();
             this.lblTInteres = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -59,7 +60,7 @@ namespace Amortización
             this.lblPlazo = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnGuardarD = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.vistaImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpRegistro.SuspendLayout();
@@ -297,6 +298,16 @@ namespace Amortización
             this.grpTabla.Size = new System.Drawing.Size(489, 312);
             this.grpTabla.TabIndex = 16;
             // 
+            // btnGuardarD
+            // 
+            this.btnGuardarD.Location = new System.Drawing.Point(377, 243);
+            this.btnGuardarD.Name = "btnGuardarD";
+            this.btnGuardarD.Size = new System.Drawing.Size(70, 49);
+            this.btnGuardarD.TabIndex = 23;
+            this.btnGuardarD.Text = "Guardar datos";
+            this.btnGuardarD.UseVisualStyleBackColor = true;
+            this.btnGuardarD.Click += new System.EventHandler(this.Escribir_txt);
+            // 
             // lblTACuota
             // 
             this.lblTACuota.AutoSize = true;
@@ -372,23 +383,14 @@ namespace Amortización
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnGuardarD
-            // 
-            this.btnGuardarD.Location = new System.Drawing.Point(377, 243);
-            this.btnGuardarD.Name = "btnGuardarD";
-            this.btnGuardarD.Size = new System.Drawing.Size(70, 49);
-            this.btnGuardarD.TabIndex = 23;
-            this.btnGuardarD.Text = "Guardar datos";
-            this.btnGuardarD.UseVisualStyleBackColor = true;
-            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 376);
-            this.Controls.Add(this.grpTabla);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpRegistro);
+            this.Controls.Add(this.grpTabla);
             this.MaximumSize = new System.Drawing.Size(499, 415);
             this.MinimumSize = new System.Drawing.Size(499, 415);
             this.Name = "Usuario";
@@ -436,6 +438,7 @@ namespace Amortización
         private System.Windows.Forms.Label lblTACuota;
         private System.Windows.Forms.Label lblTInteres;
         private System.Windows.Forms.Button btnGuardarD;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
